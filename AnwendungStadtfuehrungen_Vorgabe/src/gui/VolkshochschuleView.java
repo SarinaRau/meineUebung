@@ -1,7 +1,7 @@
 package gui;
 
 import business.VolkshochschuleModel;
-import business.Volkshochschulkurs;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -146,13 +146,13 @@ public class VolkshochschuleView {
 	    mnItmCsvImport.setOnAction(new EventHandler<ActionEvent>() {
 	    	@Override
 	        public void handle(ActionEvent e) {
-	       	 	leseAusDatei("csv");
+	       	 	leseAusDatei("csvimport");
 	    	}
 	    });
 	    mnItmTxtImport.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override
 		    public void handle(ActionEvent e) {
-		     	leseAusDatei("txt");
+		     	leseAusDatei("txtimport");
 		    }
     	});
 	    mnItmCsvExport.setOnAction(new EventHandler<ActionEvent>() {

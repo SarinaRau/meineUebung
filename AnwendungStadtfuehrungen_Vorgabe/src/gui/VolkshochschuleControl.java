@@ -23,16 +23,21 @@ public class VolkshochschuleControl {
       		if("csv".equals(typ)){
       			model.schreibeVolkshochschulenInCsvDatei();
       		}
-       		else{
-	   			view.zeigeInformationsfensterAn(
-	   				"Noch nicht implementiert!");
-	   		}
+      		else if ("txtimport".equals(typ)) {
+                model.leseAusTxtDatei();
+                view.zeigeInformationsfensterAn("TXT-Datei erfolgreich eingelesen!");
+            } 
+            else if ("csvimport".equals(typ)) {
+                model.leseAusCsvDatei();
+                view.zeigeInformationsfensterAn("CSV-Datei erfolgreich eingelesen!");
 		}
+    	}
 		catch(IOException exc){
 			view.zeigeFehlermeldungsfensterAn(
 				"IOException beim Lesen!");
 		}
 		catch(Exception exc){
+			exc.printStackTrace();
 			view.zeigeFehlermeldungsfensterAn(
 				"Unbekannter Fehler beim Lesen!");
 		}
